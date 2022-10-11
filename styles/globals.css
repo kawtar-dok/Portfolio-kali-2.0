@@ -8,4 +8,11 @@
         tracking-widest text-gray-500 transition-all hover:border-[#EC407A]/40 
         hover:text-[#EC407A]/40 
     }
+
+
+    .contactInput {
+        @apply outline-none bg-slate-400/10 rounded-sm  px-6 py-4 
+        border-b border-[#242424] text-gray-500 placeholder-gray-500 transition-all 
+        focus:border-[#EC407A]/40 focus:text-[#EC407A]/40
+    }
 }

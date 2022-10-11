@@ -12,7 +12,7 @@ export default function About({}: Props) {
 
  className='flex flex-col relative h-screen text-center md:text-left md:flex-row
      max-w-7xl px-10 justify-evenly mx-auto items-center'>
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
+      <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>
         About
         </h3>
     
@@ -22,12 +22,12 @@ export default function About({}: Props) {
     whileInView={{ x:0,opacity:1}}
     viewport={{ once: true}}
     
-    className="-mb-20  md:mb-0 flex-shrink-0 w-52 h-52 rounded-full 
+    className="-mb-20 mt-12 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full 
     md:rounded-lg md:w-72 md:h-72 xl:w-[415px] xl:h-[415px]"
     src='/kaw.jpg'
     alt=''
     />
-   <div className='space-y-10  px-0 md:px-10'> 
+   <div className='space-y-10 px-0 md:px-10'> 
       <h4 className='text-4xl font-semibold'>
         Here is a{" "}<span className='underline decoration-[#EC407A]/50'>little</span>{" "}background
       </h4>
