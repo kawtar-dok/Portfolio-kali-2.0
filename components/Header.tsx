@@ -25,7 +25,7 @@ export default function Header({}: Props) {
         }}
        className='flex flex-row items-center'>
         {/* Social Icons */} 
-        <SocialIcon url="https://youtube.com/k" 
+        <SocialIcon url="https://www.linkedin.com/kawtar-itoujane" 
         fgColor="gray"
         bgColor="transparent" />
 
