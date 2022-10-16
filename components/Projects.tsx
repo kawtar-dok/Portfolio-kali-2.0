@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import { urlFor } from '../sanity'
+import { Project } from '../typing'
 
-type Props = {}
+type Props = {
+    projects: Project[];
+}
 
-function Projects({}: Props) {
-    const projects = [1,2,3,4,5]
+function Projects({ projects }: Props) {
   return (
     <motion.div
     initial={{ opacity:0 }}
@@ -19,14 +22,16 @@ function Projects({}: Props) {
          <div className='relative w-full flex overflow-x-scroll overflow-hidden snap-x snap-mandatory z-20
           scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#EC407A]/80 '>
             {/* Projects */}
-            {projects.map((project,i) => (
-                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
+            {projects?.map((project,i) => (
+                <div 
+                 key={project._id}
+                 className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
                     <motion.img 
                     initial={{ y:-300,opacity:0}}
                     transition={{ duration:1.2}}
                     whileInView={{ opacity:1,y:0}}
                     viewport={{ once:true }}
-                    src='https://www.bi-on-focus.nl/wp-content/uploads/2019/03/Power-BI-iPhone-iPad-Surface1-695x298.png' 
+                    src={project?.image ? urlFor(project?.image).url() :''}
                     alt='' 
                     />
 
@@ -35,19 +40,26 @@ function Projects({}: Props) {
                             <span className='underline decoration-[#EC407A]/50'>
                             Case Study {i+1} of {projects.length}: 
                             </span>{" "}
-                            Netflix clone
+                            {project?.title}
                             </h4>
+
+                            <div className='flex items-center qpace-x-2 justify-center'>
+                                {project?.technologies.map(technology => (
+                                    <img
+                                    className='h-5 p-5'
+                                    key={technology._id}
+                                    src={urlFor(technology?.image).url()}
+                                    alt=''
+                                    />
+                                ))}
+                            </div>
+
                             <p className='text-lg text-center md:text-left'>
-                                Netflix 2.0 app that has a Log In and Log Out Authentication with Google.
-                                It has a beautiful Home Screen with all the movies looking just like Netflix.
-                                There is also a subscription page where you can see your active monthly 
-                                subscription. We also use Stripe Payment for the monthly Netflix Subscription!
+                            {project.summary}
                             </p>
                     </div>
                 </div>
             ))}
-            {/* Projects */}
-            {/* Projects */}
          </div>
 
 

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,8 +9,23 @@ import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
+import { Experience, PageInfo, Project, Skill, Social } from '../typing'
+import { fetchExperiences } from '../utils/fetchExperiences'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchSocials } from '../utils/fetchSocial'
 
-const Home: NextPage = () => {
+type Props = {
+   pageInfo: PageInfo;
+   skills: Skill[];
+   experiences: Experience[];
+   projects: Project[];
+   socials: Social[];
+
+}
+
+const Home = ({ pageInfo, experiences, skills, projects, socials}: Props) => {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
     overflow-y-scroll overflow-x-hidden z-0 
@@ -21,30 +36,30 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Header */}
-      <Header />
+      <Header socials={socials} />
       
       {/* Hero*/}   
       <section id='hero' className='snap-start'>
-       <Hero />
+       <Hero pageInfo={pageInfo}/>
       </section>
 
       {/* About */}
       <section id="about" className='snap-center'>
-      <About />
+      <About pageInfo={pageInfo}/>
       </section>
 
       {/* Experience */}
       <section id='experience' className='snap-center'>
-      <WorkExperience />
+      <WorkExperience experiences={ experiences }/>
       </section>
 
       {/* Skills */}  <section id="skills" className='snap-start'>
-        <Skills />
+        <Skills skills={skills}/>
       </section>
 
       {/* Projects */}
       <section id="projects" className='snap-start'>
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       {/* Contact Me */}
@@ -59,7 +74,7 @@ const Home: NextPage = () => {
              <img 
              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
              src='/kaw2.jpg'
-             alt=""
+             alt="" 
               />
            </div>
         </footer>
@@ -69,3 +84,27 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+   
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  let projects: Project[] = await fetchProjects();
+  console.log(projects)
+  const socials: Social[] = await fetchSocials();
+
+return {
+  props: {
+    pageInfo,
+    experiences,
+    skills,
+    projects,
+    socials,
+    },
+    //Next/js will attempt to re-generate the page:
+    // -when a request comes to
+    // -at most once every 10 seconds
+    revalidate: 10,
+  }
+}  
