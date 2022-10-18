@@ -13,7 +13,7 @@
 /out/
 
 
-sanity/node_modules 
+/sanity-kali/node_modules 
 
 # production
 /build
