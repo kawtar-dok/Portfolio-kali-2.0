@@ -32,7 +32,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials}: Props) => {
     scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#EC407A]/80 '>
       <Head>
         <title>Kali's Portfolio</title>
-        <link rel="icon" href="/icon-kali.ico" />
+        <link rel="icon" href="/kali-icon.ico" />
       </Head>
 
       {/* Header */}
