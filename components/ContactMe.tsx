@@ -27,29 +27,29 @@ function ContactMe({}: Props) {
          Contact 
         </h3>
 
-        <div className='flex flex-col space-y-10'>
+        <div className='flex flex-col space-y-10 mt-16'>
             <h4 className='text-4xl font-semibold text-center'>
                 I have got just what you need.{" "}
                 <span className='underline decoration-[#EC407A]/50'>Lets Talk </span> {"💕"}
             </h4>
 
-            <div className='flex flex-col space-y-10'>
+            <div className='flex flex-col space-y-2'>
                {/* <div className='flex items-center space-x-5 justify-center'>
                 <PhoneIcon className='text-[#EC407A] h-7 w-7 animate-pulse'/>
                 <p className='text-2xl'>+212 679032767</p>
                </div> */}
                 
                <div className='flex items-center space-x-5 justify-center'>
-                <EnvelopeIcon className='text-[#EC407A] h-7 w-7 animate-pulse'/>
-                <p className='text-2xl'>kawtaritoujane@gmail.com</p>
+                <EnvelopeIcon className='text-[#EC407A] h-5 w-5 animate-pulse'/>
+                <p className='text-xl'>kawtaritoujane@gmail.com</p>
                </div>
 
-               <div className='flex items-center space-x-5 justify-center'>
-                <MapPinIcon className='text-[#EC407A] h-7 w-7 animate-pulse'/>
-                <p className='text-2xl'>Rabat Maroc</p>
+               <div className='flex items-center space-x-2 justify-center'>
+                <MapPinIcon className='text-[#EC407A] h-5 w-5 animate-pulse'/>
+                <p className='text-xl'>Rabat Maroc</p>
                </div>   
            </div>
-
+      
            <form 
            onSubmit={handleSubmit(onSubmit)}
            className='flex flex-col space-y-2 w-fit mx-auto'>
