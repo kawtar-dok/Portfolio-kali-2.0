@@ -1,12 +1,12 @@
+import getExperiences from "../pages/api/getExperiences";
 import { Experience } from "../typing"
 
-export const fetchExperiences =  async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperiences`);
+export const fetchExperiences = async () => {
+  const res = await getExperiences()
 
-  const data = await res.json();
-  const experiences: Experience[] = data.experiences;
- // console.log("fetching", socials)
+  const experiences: Experience[] = res
+  // console.log("fetching", socials)
 
-    return experiences;
+  return experiences;
 }
 

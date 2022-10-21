@@ -1,12 +1,11 @@
+import getProjects from "../pages/api/getProjects";
 import { Project } from "../typing"
 
-export const fetchProjects =  async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`);
+export const fetchProjects = async () => {
+  const res = await getProjects();
+  const projects: Project[] = res;
+  // console.log("fetching", socials)
 
-  const data = await res.json();
-  const projects: Project[] = data.projects;
- // console.log("fetching", socials)
-
-    return projects;
+  return projects;
 }
 

@@ -6,17 +6,15 @@ import { Social } from '../../typing'
 //import { PageInfo, Social } from '../../typings';
 
 type Data = {
-    socials: Social[]
+  socials: Social[]
 }
 
 const query = groq`*[_type == "social"]`
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default async function getSocials() {
 
   const socials: Social[] = await sanityClient.fetch(query);
 
-  res.status(200).json({ socials })
+  return socials
+
 }
