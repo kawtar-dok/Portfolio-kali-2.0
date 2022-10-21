@@ -45,7 +45,7 @@ function Projects({ projects }: Props) {
                             {project?.title} 
                             </h4>
 
-                            <div className='items-center justify-center text-center
+                            <div className='items-center justify-center text-center animate-pulse
                             cursor-pointer no-underline decoration-pink-500 hover:underline hover:text-xl'>
                                <Link href={project?.linkToBuild ? project?.linkToBuild : ""}>
                                    <h1 className=' tracking-[2px] text-gray-300'>
