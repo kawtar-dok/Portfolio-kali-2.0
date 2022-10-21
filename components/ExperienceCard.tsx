@@ -43,7 +43,7 @@ export default function ExperienceCard({ experience }: Props) {
            : new Date(experience.dateEnded).toDateString()}
         </p>
         
-        <ul className='list-disc space-y-4 ml-5 text-lg h-48  overflow-y-scroll 
+        <ul className='list-disc space-y-4 ml-5 text-lg h-48 whitespace-pre-line overflow-y-scroll 
         pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#EC407A]/80'>
             {experience.points.map((point, i) => (
               <li key={i} >{point}</li>

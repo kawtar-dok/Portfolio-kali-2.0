@@ -10,7 +10,9 @@ type Props = {
 
 function SkillCard({ skill,directionLeft }: Props) {
   return (
-    <div className='group relative flex cursor-pointer'>
+    <div 
+    key={skill._id}
+    className='group relative flex cursor-pointer'>
        <motion.img
        initial={{
         x: directionLeft ? -200 : 200,
