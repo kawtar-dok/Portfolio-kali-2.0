@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.12",
+    "@portabletext/react": "^1.0.6",
+    "@sanity/core": "^0.139.3",
+    "@sanity/image-url": "^1.0.1",
+    "framer-motion": "^7.5.3",
+    "next": "latest",
+    "next-sanity": "^1.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-hook-form": "^7.37.0",
+    "react-simple-typewriter": "^4.0.5",
+    "react-social-icons": "^5.15.0",
+    "sanity": "^2.33.2",
+    "tailwind-scrollbar": "^2.1.0-preview.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.35",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.5",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.2",
+    "typescript": "4.7.2"
+  }
+}
