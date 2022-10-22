@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import About from '../components/About'
 import ContactMe from '../components/ContactMe'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
@@ -66,7 +67,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials}: Props) => {
       <section id='contact' className='snap-start'>
         <ContactMe />
       </section>
-       
+        
 
       <Link href="#hero">
         <footer className='sticky bottom-8  w-full cursor-pointer md:bottom-5'>
@@ -79,6 +80,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials}: Props) => {
            </div>
         </footer>
       </Link>
+      <Footer />
     </div>
   )
 }
