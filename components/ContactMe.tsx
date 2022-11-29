@@ -28,8 +28,9 @@ function ContactMe({}: Props) {
         </h3>
 
         <div className='flex flex-col space-y-10 mt-16'>
-            <h4 className='text-4xl font-semibold text-center'>
-                I have got just what you need.{" "}
+            <h4 className='text-lg  sm:text-3xl md:text-4xl xl:text-4xl font-semibold text-center'>
+                I have got just what you need. 
+                {" "}
                 <span className='underline decoration-[#EC407A]/50'>Lets Talk </span> {"💕"}
             </h4>
 
@@ -41,12 +42,12 @@ function ContactMe({}: Props) {
                 
                <div className='flex items-center space-x-5 justify-center'>
                 <EnvelopeIcon className='text-[#EC407A] h-5 w-5 animate-pulse'/>
-                <p className='text-xl'>kawtaritoujane@gmail.com</p>
+                <p className='text-base sm:text-xl md:text-xl xl:text-xl'>kawtaritoujane@gmail.com</p>
                </div>
 
                <div className='flex items-center space-x-2 justify-center'>
                 <MapPinIcon className='text-[#EC407A] h-5 w-5 animate-pulse'/>
-                <p className='text-xl'>Rabat Maroc</p>
+                <p className='text-base sm:text-xl md:text-xl xl:text-xl'>Rabat Maroc</p>
                </div>   
            </div>
       

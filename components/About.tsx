@@ -26,13 +26,13 @@ export default function About({ pageInfo}: Props) {
     whileInView={{ x:0,opacity:1}}
     viewport={{ once: true}}
     
-    className="-mb-20 mt-12 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full 
+    className="-mb-2 mt-28 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full 
     md:rounded-lg md:w-72 md:h-72 xl:w-[415px] xl:h-[415px]"
     src={urlFor(pageInfo?.porfilePic).url()}
     alt=''
     />
-   <div className='space-y-10 px-0 md:px-10'> 
-      <h4 className='text-4xl font-semibold'>
+   <div className='space-y-2 md:space-y-10 xl:space-y-10 px-0 md:px-10'> 
+      <h4 className='text-3xl md:text-4xl xl:text-4xl font-semibold'>
         Here is a{" "}<span className='underline decoration-[#EC407A]/50'>little</span>{" "}background
       </h4>
       <p className='text-sm'>
